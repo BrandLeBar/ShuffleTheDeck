@@ -1,4 +1,10 @@
-﻿Option Compare Text
+﻿'Brandon Barrera
+'RCET 2265
+'Spring 2025
+'Shuffle The Deck
+'https://github.com/BrandLeBar/ShuffleTheDeck.git
+
+Option Compare Text
 Option Strict On
 Option Explicit On
 Module ShuffleTheDeck
@@ -35,14 +41,14 @@ Module ShuffleTheDeck
 
         If clearCount Then
             cardCounter = 0
+
         ElseIf cardCounter = 52 Then
             CardTracker(0, 0, True)
             DrawCard(True)
         Else
-
             Do
-                currentNumber = RandomNumberGenerator(0, 12) 'Gets row
-                currentSuit = RandomNumberGenerator(0, 3) 'Gets Column
+                currentNumber = RandomNumberGenerator(0, 12) 'Gets Number
+                currentSuit = RandomNumberGenerator(0, 3) 'Gets Suit
 
             Loop Until temp(currentNumber, currentSuit) = False Or cardCounter >= 52
 
@@ -120,6 +126,7 @@ Module ShuffleTheDeck
 
         Return _cardType
     End Function
+
     Function CardHouse(cardNumber As Integer, cardSuit As Integer) As String
         Dim _cardHouse As String
 
